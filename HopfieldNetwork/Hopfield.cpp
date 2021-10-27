@@ -74,7 +74,10 @@ Eigen::MatrixXd Hopfield::Activation(Eigen::VectorXd testVector)
 				{
 					testVector((i * inputMatrixSize) + j) = 1;
 				}
-
+				else
+				{
+					testVector((i * inputMatrixSize) + j) = 0;
+				}
 
 			}
 		}

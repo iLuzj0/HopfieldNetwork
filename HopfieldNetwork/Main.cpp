@@ -39,7 +39,8 @@ int main()
 		1, 0, 0, 0, 0, 0, 0, 1,
 		1, 0, 0, 0, 0, 0, 0, 1,
 		1, 1, 1, 1, 1, 1, 1, 1;
-	std::cout << Network.ConvertVectorToMatrix((Network.weightsMatrix * testingMark));
+
+	std::cout << Network.Activation(testingMark);
 	//std::cout << (inputMark * Network.weightsMatrix);
 
 	return 0;
