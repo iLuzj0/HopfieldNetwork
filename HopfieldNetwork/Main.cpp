@@ -30,17 +30,25 @@ int main()
 	Network.PrintGeneratedWeights();
 	Eigen::VectorXd testingMark(MarkSize * MarkSize);
 	Eigen::MatrixXd testingMarkM(MarkSize,MarkSize);
-	testingMark <<
-		1, 1, 1, 1, 1, 1, 1, 1,
-		1, 0, 0, 0, 0, 0, 0, 1,
-		1, 0, 0, 0, 0, 1, 0, 1,
-		1, 0, 0, 1, 0, 0, 0, 1,
-		1, 0, 0, 0, 1, 0, 1, 1,
-		1, 0, 0, 0, 0, 0, 0, 1,
-		1, 0, 0, 0, 0, 0, 0, 1,
-		1, 1, 1, 1, 1, 1, 1, 1;
+	//testingMark <<
+	//	1, 1, 1, 1, 1, 1, 1, 1,
+	//	1, 0, 0, 0, 0, 0, 0, 1,
+	//	1, 0, 0, 0, 0, 1, 0, 1,
+	//	1, 0, 0, 1, 0, 0, 0, 1,
+	//	1, 0, 0, 0, 1, 0, 1, 1,
+	//	1, 0, 0, 0, 0, 0, 0, 1,
+	//	1, 0, 0, 0, 0, 0, 0, 1,
+	//	1, 1, 1, 1, 1, 1, 1, 1;
 	//testingMark = Eigen::VectorXd::Zero(MarkSize * MarkSize);
-
+	testingMark <<
+		0, 0, 0, 0, 0, 0, 0, 0,
+		0, 1, 1, 1, 1, 1, 1, 0,
+		0, 1, 1, 1, 1, 1, 1, 0,
+		0, 1, 1, 0, 0, 1, 1, 0,
+		0, 1, 1, 0, 0, 1, 1, 0,
+		0, 1, 1, 1, 1, 1, 1, 0,
+		0, 1, 1, 1, 1, 1, 1, 0,
+		0, 0, 0, 0, 0, 0, 0, 0;
 	testingMarkM = Network.ConvertVectorToMatrix(testingMark);
 
 	std::cout << "Testing Mark: " << std::endl;
