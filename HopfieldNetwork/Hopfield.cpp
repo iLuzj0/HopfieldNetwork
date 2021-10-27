@@ -64,25 +64,25 @@ void Hopfield::PrintGeneratedWeights()
 
 Eigen::MatrixXd Hopfield::Activation(Eigen::VectorXd testVector)
 {
-	if (inputMatrixSize * inputMatrixSize == testVector.size() && isInitialized)
-	{
-		for (int i = 0; i < inputMatrixSize; i++)
-		{
-			for (int j = 0; j < inputMatrixSize; j++)
-			{
-				if (testVector((i * inputMatrixSize) + j) >= 0)
-				{
-					testVector((i * inputMatrixSize) + j) = 1;
-				}
-				else
-				{
-					testVector((i * inputMatrixSize) + j) = 0;
-				}
+	Eigen::MatrixXd Holder(inputMatrixSize, inputMatrixSize);
+	Holder = ConvertVectorToMatrix(weightsMatrix * testVector);
 
+	for (int i = 0; i < inputMatrixSize; i++)
+	{
+		for (int j = 0; j < inputMatrixSize; j++)
+		{
+			if(Holder(i, j) > 0)
+			{
+				Holder(i, j) = 1;
+			}
+			else if(Holder(i, j) < 0)
+			{
+				Holder(i, j) = 0;
 			}
 		}
 	}
-	return inputMatrix;
+	
+	return Holder;
 }
 
 

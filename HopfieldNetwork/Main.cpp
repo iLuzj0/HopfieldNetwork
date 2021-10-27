@@ -40,6 +40,9 @@ int main()
 		1, 0, 0, 0, 0, 0, 0, 1,
 		1, 1, 1, 1, 1, 1, 1, 1;
 
+	Eigen::VectorXd zeroMark(MarkSize * MarkSize);
+	zeroMark = Eigen::VectorXd::Zero(MarkSize * MarkSize);
+	//std::cout << (Network.ConvertVectorToMatrix(Network.weightsMatrix * zeroMark));
 	std::cout << Network.Activation(testingMark);
 	//std::cout << (inputMark * Network.weightsMatrix);
 
