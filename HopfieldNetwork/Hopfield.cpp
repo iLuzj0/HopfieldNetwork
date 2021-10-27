@@ -47,7 +47,7 @@ void Hopfield::GenerateWeights(Eigen::VectorXd MarkAsVector)
 				}
 				else
 				{
-					weightsMatrix(i, j) = (2 * MarkAsVector(i) - 1) + (2 * MarkAsVector(j) - 1);
+					weightsMatrix(i, j) = (2 * MarkAsVector(i) - 1) * (2 * MarkAsVector(j) - 1);
 				}
 			}
 		}
