@@ -30,7 +30,7 @@ int main()
 	Network.PrintGeneratedWeights();
 	Eigen::VectorXd testingMark(MarkSize * MarkSize);
 	Eigen::MatrixXd testingMarkM(MarkSize,MarkSize);
-	/*testingMark <<
+	testingMark <<
 		1, 1, 1, 1, 1, 1, 1, 1,
 		1, 0, 0, 0, 0, 0, 0, 1,
 		1, 0, 0, 0, 0, 1, 0, 1,
@@ -38,8 +38,8 @@ int main()
 		1, 0, 0, 0, 1, 0, 1, 1,
 		1, 0, 0, 0, 0, 0, 0, 1,
 		1, 0, 0, 0, 0, 0, 0, 1,
-		1, 1, 1, 1, 1, 1, 1, 1;*/
-	testingMark = Eigen::VectorXd::Zero(MarkSize * MarkSize);
+		1, 1, 1, 1, 1, 1, 1, 1;
+	//testingMark = Eigen::VectorXd::Zero(MarkSize * MarkSize);
 
 	testingMarkM = Network.ConvertVectorToMatrix(testingMark);
 
