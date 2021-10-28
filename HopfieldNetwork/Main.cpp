@@ -4,7 +4,6 @@
 
 int main()
 {
-	//Eigen::MatrixXd inputMark(MarkSize, MarkSize);
 	Eigen::VectorXd inputMark(MarkSize * MarkSize);
 	inputMark <<
 		1, 1, 1, 1, 1, 1, 1, 1,
@@ -39,7 +38,7 @@ int main()
 	//	1, 0, 0, 0, 0, 0, 0, 1,
 	//	1, 0, 0, 0, 0, 0, 0, 1,
 	//	1, 1, 1, 1, 1, 1, 1, 1;
-	//testingMark = Eigen::VectorXd::Zero(MarkSize * MarkSize);
+	testingMark = Eigen::VectorXd::Zero(MarkSize * MarkSize);
 	//testingMark <<
 	//	0, 0, 0, 0, 0, 0, 0, 0,
 	//	0, 1, 1, 1, 1, 1, 1, 0,
@@ -49,15 +48,15 @@ int main()
 	//	0, 1, 1, 1, 1, 1, 1, 0,
 	//	0, 1, 1, 1, 1, 1, 1, 0,
 	//	0, 0, 0, 0, 0, 0, 0, 0;
-		testingMark <<
-		0, 0, 0, 0, 0, 0, 0, 0,
-		0, 0, 0, 0, 0, 1, 1, 0,
-		0, 1, 0, 0, 1, 0, 0, 0,
-		0, 1, 1, 0, 0, 1, 1, 0,
-		0, 1, 1, 0, 0, 1, 0, 0,
-		0, 1, 1, 1, 1, 1, 0, 0,
-		0, 1, 0, 1, 0, 1, 0, 0,
-		0, 0, 0, 0, 0, 0, 0, 0;
+		//testingMark <<
+		//0, 0, 0, 0, 0, 0, 0, 0,
+		//0, 0, 0, 0, 0, 1, 1, 0,
+		//0, 1, 0, 0, 1, 0, 0, 0,
+		//0, 1, 1, 0, 0, 1, 1, 0,
+		//0, 1, 1, 0, 0, 1, 0, 0,
+		//0, 1, 1, 1, 1, 1, 0, 0,
+		//0, 1, 0, 1, 0, 1, 0, 0,
+		//0, 0, 0, 0, 0, 0, 0, 0;
 	testingMarkM = Network.ConvertVectorToMatrix(testingMark);
 
 	std::cout << "Testing Mark: " << std::endl;

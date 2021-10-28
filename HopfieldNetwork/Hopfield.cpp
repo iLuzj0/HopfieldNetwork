@@ -33,8 +33,6 @@ void Hopfield::PrintGeneratedInputMark()
 
 void Hopfield::GenerateWeights(Eigen::VectorXd MarkAsVector)
 {
-	Eigen::MatrixXd test(8, 8);
-	test = Eigen::MatrixXd::Zero(8, 8);
 	if (isInitialized)
 	{
 		for (int i = 0; i < inputMatrixSize * inputMatrixSize; i++)
